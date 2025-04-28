@@ -70,3 +70,7 @@ Sehe [PRODUCTS.md](PRODUCTS.md) für detaillierte Informationen zur Produktverwa
 
 # Orderverwaltung
 Sehe [ORDERS.md](ORDERS.md) für detaillierte Informationen zur Orderverwaltung.
+
+
+# Dashboard
+Sehe [DAHBAORD.md](DAHBAORD.md) für detaillierte Informationen zum Dashboard.
