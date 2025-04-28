@@ -32,8 +32,7 @@ class UserController extends BaseController
         extract($params);
 
         $query = $this->userModel->select('users.id AS user_id, users.*, persons.*')
-            ->join('persons', 'users.person_id = persons.id', 'left')
-            ->orderBy('users.id', 'DESC');
+            ->join('persons', 'users.person_id = persons.id', 'left');
 
 
         if (!empty($search)) {
