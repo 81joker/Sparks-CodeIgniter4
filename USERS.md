@@ -7,9 +7,7 @@
 - Dateiupload für Benutzeravatare
 - Paginierung und Suchfunktionalität
 
-## Datenbankschema
 
-Siehe [DATABASE.md](DATABASE.md) für detaillierte Schema-Dokumentation.
 
 ## Funktionsweise
 
