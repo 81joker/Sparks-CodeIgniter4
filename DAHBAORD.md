@@ -61,9 +61,3 @@ A comprehensive admin dashboard for managing customers, products, orders, and us
   - Color-coded badges
   - Border indicators
   - Icon-based status
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone [repository-url]
