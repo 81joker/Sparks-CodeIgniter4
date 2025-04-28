@@ -62,10 +62,11 @@
 
         <!-- Latest Orders -->
         <div class="col-md-8 mb-2 pe-md-0 position-relative">
-            <div class="card bg-white shadow rounded-2 vh-100">
+            <div class="card bg-white shadow rounded-2 h-auto">
                 <div class="card-body font-14">
                     <h5 class="card-title">Letzte Bestellungen</h5>
-                    <table class="table ">
+                    <div class="table-responsive">
+                    <table class="table overflow-hidden">
                         <thead>
                             <tr>
                                 <th scope="col">#Order</th>
@@ -115,6 +116,7 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                </div>
                 </div>
                 <!-- Spinner -->        
                 <div id="loadingSpinner4" class="spinner-border  position-absolute top-25  start-50" role="status" style="top: 10%;">
