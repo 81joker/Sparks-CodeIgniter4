@@ -1,28 +1,49 @@
-# CodeIgniter 4 Project
+## Übersicht
 
-## Setup Instructions
+Dieses Projekt läuft in einer Docker-Umgebung. Das Setup umfasst:
 
-1. **Install Dependencies**
+- **PHP 8.2** für die Ausführung des CodeIgniter-Frameworks.
+- **MySQL 8** als Datenbankserver.
+- **phpMyAdmin**, um die MySQL-Datenbank einfach über eine Weboberfläche zu verwalten.
+
+Docker wird verwendet, um all diese Dienste zu orchestrieren, was die Einrichtung und Ausführung des Projekts lokal vereinfacht.
+
+## Hauptmerkmale
+
+- **Docker-Integration**: Vereinfacht die Einrichtung der Entwicklungsumgebung mit Docker.
+- **Datenbank-Interaktion**: Unterstützt MySQL-Datenbanken mit einem Testskript zur Fehlerbehebung bei Verbindungen.
+
+## Installationsanweisungen
+
+1. **Abhängigkeiten installieren**
    ```bash
    cd app
-   composer install
+   composer update
+   ```
+   ```bash
+   cd app
+   cp env .env
    ```
 
-2. **Start Docker Containers**
+2. **Docker-Container starten**
    ```bash
    docker-compose up --build -d
    ```
 
-3. **Access Application Container**
+3. **Anwendung-Container betreten**
    ```bash
    docker exec -it app bash
    ```
 
-4. **Run Development Server**
+4. **Migrationen ausführen**
    ```bash
-   php spark serve
+   php spark migrate
    ```
 
+5. **Seeders ausführen**
+   ```bash
+   php spark db:seed TestSeed
+   ```
 ## Troubleshooting Database Connections
 
 If you encounter MySQL connection issues, you can use the database test file located at `public/test_db.php` to verify your connection.
