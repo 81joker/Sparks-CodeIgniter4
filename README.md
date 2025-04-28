@@ -67,3 +67,6 @@ Sehe [USERS.md](USERS.md) für detaillierte Informationen zur User- und Benutzer
 
 # Productverwaltun
 Sehe [PRODUCTS.md](PRODUCTS.md) für detaillierte Informationen zur Produktverwaltung.
+
+# Orderverwaltung
+Sehe [ORDERS.md](ORDERS.md) für detaillierte Informationen zur Orderverwaltung.
