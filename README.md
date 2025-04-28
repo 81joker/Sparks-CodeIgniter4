@@ -163,9 +163,7 @@ Das Testskript zeigt Verbindungsstatus und Debugging-Details an.
 
 Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden Sie in der LICENSE-Datei.
 
-## Mitwirken
 
-Sie können gerne Probleme oder Funktionsanforderungen über das [GitHub-Repository](https://github.com/81joker/Sparks-CodeIgniter44) einreichen.
 # Datenbank-Schema Dokumentation
 
 ## Tabellen
