@@ -43,9 +43,4 @@ class ProductModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-    
-    // public function orderLines()
-    // {
-    //     return $this->hasMany('App\Models\OrderLineModel', 'ProductID');
-    // }
 }

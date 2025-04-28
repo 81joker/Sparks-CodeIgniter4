@@ -63,3 +63,7 @@ Siehe [DATABASE.md](DATABASE.md) für detaillierte Schema-Dokumentation.
 
 # User- und Benutzerdatenverwaltung
 Sehe [USERS.md](USERS.md) für detaillierte Informationen zur User- und Benutzerdatenverwaltung.
+
+
+# Productverwaltun
+Sehe [PRODUCTS.md](PRODUCTS.md) für detaillierte Informationen zur Produktverwaltung.
