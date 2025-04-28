@@ -101,24 +101,6 @@ Docker wird verwendet, um all diese Dienste zu orchestrieren, was die Einrichtun
    php spark db:seed TestSeed
    ```
 
-## Datenbankschema und Beziehungen
-
-Die Anwendung verwendet eine MySQL-Datenbank. Nachfolgend sind die wichtigsten Tabellen und ihre Beziehungen aufgeführt:
-
-- **Benutzer**
-  - Spalten: `id`, `username`, `email`, `password`, `created_at`, `updated_at`
-  - Beziehungen: Eins-zu-Viele mit `Posts`
-
-- **Posts**
-  - Spalten: `id`, `user_id` (FK), `title`, `content`, `created_at`, `updated_at`
-  - Beziehungen: Viele-zu-Eins mit `Benutzer`, Eins-zu-Viele mit `Kommentare`
-
-- **Kommentare**
-  - Spalten: `id`, `post_id` (FK), `user_id` (FK), `comment`, `created_at`, `updated_at`
-  - Beziehungen: Viele-zu-Eins mit `Posts` und `Benutzer`
-
-Jede Tabelle ist normalisiert, um die Datenintegrität zu gewährleisten und Redundanzen zu minimieren.
-
 ## Fehlerbehebung bei Datenbankverbindungen
 
 Falls Probleme auftreten, verwenden Sie die Testdatei für die Datenbank (`public/test_db.php`) mit den folgenden Umgebungsvariablen:
