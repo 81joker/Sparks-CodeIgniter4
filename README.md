@@ -61,3 +61,5 @@ This test file attempts to connect using the following environment variables (or
 Siehe [DATABASE.md](DATABASE.md) für detaillierte Schema-Dokumentation.
 
 
+# User- und Benutzerdatenverwaltung
+Sehe [USERS.md](USERS.md) für detaillierte Informationen zur User- und Benutzerdatenverwaltung.
