@@ -74,3 +74,5 @@ Sehe [ORDERS.md](ORDERS.md) für detaillierte Informationen zur Orderverwaltung.
 
 # Dashboard
 Sehe [DAHBAORD.md](DAHBAORD.md) für detaillierte Informationen zum Dashboard.
+
+![Diagramm der Datenbank](/digram_database.png)
