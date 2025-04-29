@@ -66,12 +66,7 @@ class UserController extends BaseController
         ];
         return view('users/index', ['users' => $data]);
     }
-    public function api()
-    {
-        $model = new UserModel();
-        $data['users'] = $model->findAll();
-        return $this->response->setJSON($data);
-    }
+
 
     public function show($id)
     {
@@ -219,4 +214,6 @@ class UserController extends BaseController
         $this->personModel->delete($user['person_id']);
         return redirect()->to('/users')->with('success', 'Benutzer erfolgreich gelöscht');
     }
+
+
 }

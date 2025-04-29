@@ -13,12 +13,6 @@ $routes->get('/', 'DashboardController::index');
 
 
 
-// $routes->get('/posts', 'PostController::index');
-// $routes->get('/post/create', 'PostController::create');
-// $routes->post( '/posts/store', 'PostController::store');
-// $routes->get('/post/edit/(:num)', 'PostController::edit/$1');
-// $routes->post('/posts/update/(:num)', 'PostController::update/$1');
-// $routes->get('/post/delete/(:num)', 'PostController::delete/$1');
 
 // Users 
 $routes->get('/users', 'UserController::index');
@@ -29,6 +23,10 @@ $routes->get('/user/create', 'UserController::create');
 $routes->post('/users/store', 'UserController::store');
 // $routes->post('users/update/(:any)', 'UserController::update/$1');
 $routes->get('/user/delete/(:num)', 'UserController::delete/$1');
+
+$routes->get('/users/api/json', '\App\Controllers\Api\UserController::apiJson');
+$routes->get('/users/api/xml', '\App\Controllers\Api\UserController::apiXml');
+$routes->get('/users/api/csv', '\App\Controllers\Api\UserController::apiCsv');
 
 
 // // Customer 
