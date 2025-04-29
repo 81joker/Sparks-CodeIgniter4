@@ -92,6 +92,6 @@ Speichert Bestellpositionen (Verbindungstabelle zwischen Bestellungen und Produk
 - Viele-zu-eins mit `products` über `product_id`
 - Viele-zu-eins mit `orders` über `order_id`
 
-![Diagramm der Datenbank](/digram_database.png)
+![Diagramm der Datenbank](./DATABASE.png "Datenbankdiagramm")
 
 
