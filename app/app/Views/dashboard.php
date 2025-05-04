@@ -71,6 +71,7 @@
                             <tr>
                                 <th scope="col">#Order</th>
                                 <th scope="col">Product</th>
+                                <th scope="col"></th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Customer</th>
                                 <th scope="col">Delivery date</th>
@@ -87,7 +88,7 @@
                                             <?= $order['id'] ?>
                                         </a>
                                     </th>
-                                    <td>
+                                    <td colspan="2">
                                         <a href="<?php echo base_url('/product/show/' . $order['customer_id']) ?>" class="link-body-emphasis text-decoration-none d-flex align-items-center link-opacity-50-hover">
                                             <?php if (! empty($order['image'])): ?>
                                                 <img src="<?= base_url(esc($order['image'])) ?>" class="img-thumbnail border border-2"
