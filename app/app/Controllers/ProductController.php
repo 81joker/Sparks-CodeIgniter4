@@ -24,7 +24,6 @@ class ProductController extends BaseController
         $this->uploadService = new FileUploadService();
         $this->validateRule = new ValidationHelper();
         $this->productModel = new ProductModel();
-        // $this->personModel = new PersonModel();
     }
 
 
@@ -33,8 +32,7 @@ class ProductController extends BaseController
 
         $params = $this->getListParams();
         extract($params); 
-        $query = $this->productModel->table('products')->orderBy('id', 'DESC');
-
+        $query = $this->productModel->table('products');
         if (!empty($search)) {
             $query = $query->groupStart()
                 ->like('name', $search)
@@ -42,7 +40,17 @@ class ProductController extends BaseController
                 ->orLike('status', $search)
                 ->groupEnd();
         }
-        $productData = $query->orderBy($sortField, $sortDirection)->paginate($perPage);
+
+        if ($sortField === 'name') {
+            $query->orderBy('name', $sortDirection);
+        }
+         elseif ($sortField === 'price') {
+            $query->orderBy('price', $sortDirection);
+        } 
+
+
+        $productData = $query->paginate($perPage);
+
         $data = [
             'products' => $productData,
             'pager' => $this->productModel->pager,

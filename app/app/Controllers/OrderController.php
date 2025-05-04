@@ -57,8 +57,7 @@ class OrderController extends BaseController
                     ->groupEnd();
             }
             if ($sortField === 'status') {
-                $query->orderBy('orders.order_status', $sortDirection)
-                    ->orderBy('orders.order_status', $sortDirection);
+                $query->orderBy('orders.order_status', $sortDirection);
             } elseif ($sortField === 'total_amount') {
                 $query->orderBy('total_amount', $sortDirection);
             }

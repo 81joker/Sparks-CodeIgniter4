@@ -41,22 +41,8 @@
                 <tr class="text-center">
                     <th>#ID</th>
                     <th>Image</th>
-                    <th>
-                        <a href="?sort_field=name&sort_direction=<?= ($sortField === 'name' && $sortDirection === 'ASC') ? 'DESC' : 'ASC' ?>&search=<?= esc($search ?? '') ?>" class="text-dark">
-                             Name
-                            <?php if ($sortField === 'name'): ?>
-                                <?= $sortDirection === 'ASC' ? '↑' : '↓' ?>
-                        <?php endif; ?>
-                        </a>
-                      </th>
-                    <th>
-                    <a href="?sort_field=price&sort_direction=<?= ($sortField === 'price' && $sortDirection === 'ASC') ? 'DESC' : 'ASC' ?>&search=<?= esc($search ?? '') ?>" class="text-dark">
-                             Price
-                            <?php if ($sortField === 'price'): ?>
-                                <?= $sortDirection === 'ASC' ? '↑' : '↓' ?>
-                        <?php endif; ?>
-                        </a>
-                    </th>
+                    <th><?= sortable_column('Name', 'name', $sortField, $sortDirection, $search ?? '') ?></th>
+                    <th><?= sortable_column('Price', 'price', $sortField, $sortDirection, $search ?? '') ?></th>
                     <th>Last Updated At</th>
                     <th>Actions</th>
                 </tr>

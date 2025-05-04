@@ -45,8 +45,7 @@ class UserController extends BaseController
                 ->groupEnd();
         }
         if ($sortField === 'name') {
-            $query->orderBy('persons.lastname', $sortDirection)
-                ->orderBy('persons.firstname', $sortDirection);
+            $query->orderBy('persons.lastname', $sortDirection);
         } elseif ($sortField === 'email') {
             $query->orderBy('persons.email', $sortDirection);
         }
@@ -202,7 +201,6 @@ class UserController extends BaseController
         return redirect()->to('/users')
             ->with('success', "{$personData['firstname']} {$personData['lastname']} wurde erfolgreich aktualisiert");
     }
-
 
 
     public function delete($id)

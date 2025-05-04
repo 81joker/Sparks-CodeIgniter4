@@ -34,7 +34,6 @@ class CustomerController extends BaseController
         $query = $this->customerModel->select('customers.id AS customer_id, customers.*, persons.*')
             ->join('persons', 'customers.person_id = persons.id', 'left');
 
-
         if (!empty($search)) {
             $query = $query->groupStart()
                 ->like('firstname', $search)
@@ -45,8 +44,7 @@ class CustomerController extends BaseController
                 ->groupEnd();
         }
         if ($sortField === 'name') {
-            $query->orderBy('persons.lastname', $sortDirection)
-                ->orderBy('persons.firstname', $sortDirection);
+            $query->orderBy('persons.lastname', $sortDirection);
         } elseif ($sortField === 'email') {
             $query->orderBy('persons.email', $sortDirection);
         }
@@ -69,7 +67,6 @@ class CustomerController extends BaseController
     public function show($id)
     {
         $data['customer'] = $this->customerModel->getCustomerWithPerson($id);
-
         if (!$data['customer']) {
             return redirect()->to('/customers')->with('error', 'Customer not found');
         }
@@ -79,7 +76,6 @@ class CustomerController extends BaseController
 
     public function create()
     {
-        // $person_id = $this->request->getGet('person_id');
         return view('customers/create');
     }
 
