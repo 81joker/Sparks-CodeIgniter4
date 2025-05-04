@@ -40,22 +40,12 @@
                 <tr class="text-center">
                     <th>#ID</th>
                     <th>Avatar</th>
-                    <th>
-                        <a href="?sort_field=name&sort_direction=<?= ($customers['sortField'] === 'name' && $customers['sortDirection'] === 'ASC') ? 'DESC' : 'ASC' ?>&search=<?= esc($customers['search'] ?? '') ?>" class="text-dark">
-                             Name
-                            <?php if ($customers['sortField'] === 'name'): ?>
-                                <?= $customers['sortDirection'] === 'ASC' ? '↑' : '↓' ?>
-                            <?php endif; ?>
-                        </a>
-                    </th>
-                    <th>
-                        <a href="?sort_field=email&sort_direction=<?= ($customers['sortField'] === 'email' && $customers['sortDirection'] === 'ASC') ? 'DESC' : 'ASC' ?>&search=<?= esc($customers['search'] ?? '') ?>" class="text-dark">
-                            Email
-                            <?php if ($customers['sortField'] === 'email'): ?>
-                                <?= $customers['sortDirection'] === 'ASC' ? '↑' : '↓' ?>
-                            <?php endif; ?>
-                        </a>
-                    </th>
+                    <?php 
+                    $sortField = $customers['sortField'];
+                    $sortDirection = $customers['sortDirection'];
+                    ?>
+                    <th><?= sortable_column('Name', 'name', $sortField, $sortDirection, $search ?? '') ?></th>
+                    <th><?= sortable_column('Eamil', 'email', $sortField, $sortDirection, $search ?? '') ?></th>
                     <th>Type</th>
                     <th>Last Updated At</th>
                     <th>Actions</th>

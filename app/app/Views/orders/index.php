@@ -38,22 +38,12 @@ use App\Enums\OrderStatus;
                 <tr class="text-center">
                     <th>#ID</th>
                     <th>Customer</th>
-                    <th>
-                        <a href="?sort_field=name&sort_direction=<?= ($orders['sortField'] === 'name' && $orders['sortDirection'] === 'ASC') ? 'DESC' : 'ASC' ?>&search=<?= esc($orders['search'] ?? '') ?>" class="text-dark">
-                            Status
-                            <?php if ($orders['sortField'] === 'name'): ?>
-                                <?= $orders['sortDirection'] === 'ASC' ? '↑' : '↓' ?>
-                            <?php endif; ?>
-                        </a>
-                    </th>
-                    <th>
-                        <a href="?sort_field=email&sort_direction=<?= ($orders['sortField'] === 'email' && $orders['sortDirection'] === 'ASC') ? 'DESC' : 'ASC' ?>&search=<?= esc($orders['search'] ?? '') ?>" class="text-dark">
-                            Total Price
-                            <?php if ($orders['sortField'] === 'email'): ?>
-                                <?= $orders['sortDirection'] === 'ASC' ? '↑' : '↓' ?>
-                            <?php endif; ?>
-                        </a>
-                    </th>
+                    <?php 
+                    $sortField = $orders['sortField'];
+                    $sortDirection = $orders['sortDirection'];
+                    ?>
+                    <th><?= sortable_column('Status', 'status', $sortField, $sortDirection, $search ?? '') ?></th>
+                    <th><?= sortable_column('Total Price', 'total_amount', $sortField, $sortDirection, $search ?? '') ?></th>
                     <th>Date</th>
                     <th>Actions</th>
                 </tr>

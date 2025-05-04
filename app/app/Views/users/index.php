@@ -40,22 +40,12 @@
                 <tr class="text-center">
                     <th>#ID</th>
                     <th>Avatar</th>
-                    <th>
-                        <a href="?sort_field=name&sort_direction=<?= ($users['sortField'] === 'name' && $users['sortDirection'] === 'ASC') ? 'DESC' : 'ASC' ?>&search=<?= esc($users['search'] ?? '') ?>" class="text-dark">
-                             Name
-                            <?php if ($users['sortField'] === 'name'): ?>
-                                <?= $users['sortDirection'] === 'ASC' ? '↑' : '↓' ?>
-                            <?php endif; ?>
-                        </a>
-                    </th>
-                    <th>
-                        <a href="?sort_field=email&sort_direction=<?= ($users['sortField'] === 'email' && $users['sortDirection'] === 'ASC') ? 'DESC' : 'ASC' ?>&search=<?= esc($users['search'] ?? '') ?>" class="text-dark">
-                            Email
-                            <?php if ($users['sortField'] === 'email'): ?>
-                                <?= $users['sortDirection'] === 'ASC' ? '↑' : '↓' ?>
-                            <?php endif; ?>
-                        </a>
-                    </th>
+                    <?php 
+                    $sortField = $users['sortField'];
+                    $sortDirection = $users['sortDirection'];
+                    ?>
+                    <th><?= sortable_column('Name', 'name', $sortField, $sortDirection, $search ?? '') ?></th>
+                    <th><?= sortable_column('Eamil', 'email', $sortField, $sortDirection, $search ?? '') ?></th>
                     <th>Status</th>
                     <th>Last Updated At</th>
                     <th>Actions</th>

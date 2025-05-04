@@ -56,11 +56,11 @@ class OrderController extends BaseController
                     ->orLike("CONCAT(firstname, ' ', lastname)", $search)
                     ->groupEnd();
             }
-            if ($sortField === 'name') {
-                $query->orderBy('persons.lastname', $sortDirection)
-                    ->orderBy('persons.firstname', $sortDirection);
-            } elseif ($sortField === 'email') {
-                $query->orderBy('persons.email', $sortDirection);
+            if ($sortField === 'status') {
+                $query->orderBy('orders.order_status', $sortDirection)
+                    ->orderBy('orders.order_status', $sortDirection);
+            } elseif ($sortField === 'total_amount') {
+                $query->orderBy('total_amount', $sortDirection);
             }
 
             $orderData = $query->paginate($perPage);
