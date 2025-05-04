@@ -5,14 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarOverlay = document.getElementById('sidebarOverlay');
     const wrapper = document.querySelector('.wrapper');
     
-    // Toggle sidebar function
     function toggleSidebar() {
         if (window.innerWidth <= 768) {
-            // Mobile behavior
             sidebar.classList.toggle('show');
             sidebarOverlay.classList.toggle('active');
         } else {
-            // Desktop behavior
             wrapper.classList.toggle('sidebar-collapsed');
         }
     }
@@ -64,12 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('searchInput').addEventListener('input', function () {
         document.getElementById('loadingSpinner').classList.remove('d-none');
     });
-
+    
     
 });
 
 // Hide spinner after 1 second
-const minDelay = 1000; // 1 second minimum
+const minDelay = 1000; 
 const startTime = Date.now();
 
 window.addEventListener('load', function() {
@@ -78,7 +75,7 @@ window.addEventListener('load', function() {
 
   setTimeout(() => {
     // Hide all spinners
-    [1,2,3,4,5,6].forEach(n => {
+    [1,2,3,4,5,6,7].forEach(n => {
       const spinner = document.getElementById(`loadingSpinner${n || ''}`);
       if(spinner) spinner.classList.add('d-none');
     });

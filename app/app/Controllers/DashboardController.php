@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Enums\PostStatus;
-use App\Enums\UserStatus;
-use App\Models\PostModel;
 use App\Models\UserModel;
 use App\Models\OrderModel;
 use App\Enums\PorductStatus;
@@ -13,8 +10,7 @@ use App\Enums\CustomerStatus;
 use App\Models\CustomerModel;
 use App\Models\OrderLineModel;
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
-
+use App\Enums\UserStatus;
 class DashboardController extends BaseController
 {
     public function index()
@@ -63,6 +59,28 @@ class DashboardController extends BaseController
         $totalPaidOrders = $totalPaidOrders->id ?? 0;
 
 
+
+        
+        //  Chart Order Status 
+        $orderStatusData = $modelOrder->select('order_status, COUNT(*) as count')
+            ->groupBy('order_status')
+            ->findAll();
+        
+        $statusLabels = [];
+        $statusData = [];
+        $statusColors = [
+            'pending' => 'rgba(255, 206, 86, 0.7)',
+            'processing' => 'rgba(54, 162, 235, 0.7)',
+            'completed' => 'rgba(75, 192, 192, 0.7)',
+            'cancelled' => 'rgba(255, 99, 132, 0.7)',
+            'paid' => 'rgba(153, 102, 255, 0.7)',
+            'unpaid' => 'rgba(255, 159, 64, 0.7)'
+        ];
+        
+        foreach ($orderStatusData as $status) {
+            $statusLabels[] = ucfirst($status['order_status']);
+            $statusData[] = $status['count'];
+        }
         $data = [
             'title' => 'Dashboard',
             'activeCustomers' => $activeCustomers,
@@ -74,6 +92,10 @@ class DashboardController extends BaseController
             'ordersWithDetails' => $ordersWithDetails,
             'totalPaidOrders' => $totalPaidOrders,
             'totalIncome' => '€' . $totalIncome,
+            // Chart Data
+            'statusLabels' => json_encode($statusLabels),
+            'statusData' => json_encode($statusData),
+            'statusColors' => json_encode(array_values($statusColors)),
         ];
         return view('dashboard', $data);
     }
