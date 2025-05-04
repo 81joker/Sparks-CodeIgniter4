@@ -2,6 +2,11 @@
     <div class="card-body">
         <canvas id="orderStatusChart" style="height: 200px"></canvas>
     </div>
+    <!-- Spinner -->
+    <div id="loadingSpinner8" class="spinner-border  position-absolute  start-50 top-50 d-none d-md-block" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <!--/ Spinner -->
 </div>
 <script>
     // Chart.js configuration

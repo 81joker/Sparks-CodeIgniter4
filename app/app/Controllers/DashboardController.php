@@ -32,6 +32,9 @@ class DashboardController extends BaseController
 
 
 
+        // Latest Customers  
+        $latestCustomers = $modelCustomer->getLatestCustomersWithPerson(5);
+
         // Latest Users  
         $latestUsers = $modelUser->getLatestUsersWithPerson(5);
 

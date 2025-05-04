@@ -1,9 +1,9 @@
-<div class="col-md-8 mb-2 pe-md-0 position-relative">
+<!-- <div class="col-md-8 mb-2 pe-md-0 position-relative"> -->
     <div class="card bg-white shadow rounded-2 h-auto">
         <div class="card-body font-14">
             <h5 class="card-title">Letzte Bestellungen</h5>
             <div class="table-responsive">
-                <table class="table overflow-hidden">
+                <table class="table overflow-hidden table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#Order</th>
@@ -62,4 +62,4 @@
         </div>
         <!--/ Spinner -->
     </div>
-</div>
+<!-- </div> -->

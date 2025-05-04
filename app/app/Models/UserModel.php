@@ -44,64 +44,6 @@ class UserModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-    // protected $appends = ['name'];
-
-    // public function getFullnameAttribute()
-    // {
-    //     return $this->attributes['firstname'] . ' ' . $this->attributes['lastname'];
-    // }
-
-
-    // public function beforeSave(array $data)
-    // {
-    //     if (isset($data['password'])) {
-    //         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-    //     }
-    //     return $data;
-    // }
-    // public function getFullName()
-    // {
-    //     return $this->firstname . ' ' . $this->lastname;
-    // }   
-
-    // public function getFullNameWithParent()
-    // {
-    //     return $this->getFullName() . ' (' . $this->parent->getFullName() . ')';
-    // }
-
-    // public function getFullNameWithChildren()
-    // {
-    //     return $this->getFullName() . ' (' . $this->children->getFullName() . ')';
-    // }
-
-    // public function getFullNameWithChildrenAndParent()
-    // {
-    //     return $this->getFullName() . ' (' . $this->parent->getFullNameWithChildren() . ')';
-    // }
-
-    // public function getFullNameWithChildrenAndParentAndOrders()
-    // {
-    //     return $this->getFullName() . ' (' . $this->parent->getFullNameWithChildrenAndParentAndOrders() . ')';
-    // }
-
-    // public function getFullNameWithChildrenAndParentAndOrdersAndOrders()
-    // {
-    //     return $this->getFullName() . ' (' . $this->parent->getFullNameWithChildrenAndParentAndOrdersAndOrders() . ')';
-    // }
-
-    // public function parent(){
-    //     return $this->belongsTo(UserModel::class, 'parent_id');
-    // }
-
-    // public function children(){
-    //     return $this->hasMany(UserModel::class, 'parent_id');
-    // }
-
-    // public function getOrders($personId)
-    // {
-    //     $orderModel = new \App\Models\OrderModel();
-    //     return $orderModel->where('person_id', $personId)->findAll();
-    // }
 
     public function getAllUsersWihtPerson()
     {

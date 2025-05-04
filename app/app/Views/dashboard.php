@@ -58,9 +58,15 @@
             </div>
         </div>
 
+
+        <div class="col-md-8 mb-2 pe-md-0 position-relative">
         <!-- Latest Orders -->
         <?= view('partials/latest_orders') ?>
         <!--/ Latest Orders -->
+        <!-- Latest Customers -->
+        <?= view('partials/latest_customers') ?>
+        <!--/ Latest Customers -->
+        </div>
 
         <div class="col-md-4 mb-2 poistion-relative">
             <!--Chart Js -->

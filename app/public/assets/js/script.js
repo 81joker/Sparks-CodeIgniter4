@@ -75,7 +75,7 @@ window.addEventListener('load', function() {
 
   setTimeout(() => {
     // Hide all spinners
-    [1,2,3,4,5,6,7].forEach(n => {
+    [1,2,3,4,5,6,77,8].forEach(n => {
       const spinner = document.getElementById(`loadingSpinner${n || ''}`);
       if(spinner) spinner.classList.add('d-none');
     });

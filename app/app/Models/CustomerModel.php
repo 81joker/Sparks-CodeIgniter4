@@ -51,24 +51,12 @@ class CustomerModel extends Model
             ->where('customers.id', $id)
             ->first();
         }
-        
-        public function person()
+        public function getLatestCustomersWithPerson($limit = 5)
         {
-            return $this->belongsTo('App\Models\PersonModel', 'person_id');
-        }
-
-        public function orders()
-        {
-            return $this->hasMany('App\Models\OrderModel', 'customer_id');
-        }
-    
-        public function children()
-        {
-            return $this->hasMany('App\Models\CustomerModel', 'parent_id');
-        }
-    
-        public function parent()
-        {
-            return $this->belongsTo('App\Models\CustomerModel', 'parent_id');
+            return $this->select('customers.*, persons.firstname, persons.lastname, persons.phone, persons.email, persons.id as person_id')
+                ->join('persons', 'persons.id = customers.person_id')
+                ->orderBy('customers.created_at', 'desc')
+                ->limit($limit)
+                ->findAll();
         }
 }
